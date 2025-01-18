@@ -66,7 +66,7 @@ namespace RotasViagem
                     {
                         sw.WriteLine(x[i]);
                     }
-
+                    sw.Dispose();
                 }
                 Console.WriteLine("Pasta e arquivo com as rota iniciais foram criados com sucesso.");
             }
@@ -87,9 +87,12 @@ namespace RotasViagem
             var service = new RouteService(repository);
 
             Console.WriteLine("Bem-vindo ao sistema de rotas!");
+             CriarArquivo();
+
             while (true)
             {
                 Console.WriteLine("Escolha uma opção:");
+                Console.WriteLine("0. Consultar Rotas existentes");
                 Console.WriteLine("1. Adicionar nova rota");
                 Console.WriteLine("2. Consultar melhor rota");
                 Console.WriteLine("3. Sair");
@@ -97,11 +100,16 @@ namespace RotasViagem
                 var option = Console.ReadLine();
                 switch (option)
                 {
+                    case "0":
+                        Lerarquivos();
+                        break;
+
                     case "1":
                         Console.WriteLine("Digite a rota no formato Origem,Destino,Valor:");
                         var routeInput = Console.ReadLine()?.Split(',');
-                        service.AddRoute(routeInput[0], routeInput[1], int.Parse(routeInput[2]));
+                        service.AddRoute(routeInput[0].ToUpper(), routeInput[1].ToUpper(), int.Parse(routeInput[2]));
                         Console.WriteLine("Rota adicionada com sucesso!");
+                        
                         break;
 
                     case "2":
@@ -112,11 +120,11 @@ namespace RotasViagem
                         break;
 
                     case "3":
-                        break;
+                        return;
 
                     case "4":
-                        CriarArquivo();
-                        Lerarquivos();
+                        //CriarArquivo();
+                       
                         break;
 
                     default:
