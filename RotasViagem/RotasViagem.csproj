@@ -43,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aplication\Interface\IRouteRepository.cs" />
-    <Compile Include="Aplication\Services\RouteService.cs" />
+    <Compile Include="Aplication\Services\RotaService.cs" />
     <Compile Include="Domain\Entidade\Rotas.cs" />
-    <Compile Include="Domain\Interfaces\IRotaRepository.cs" />
-    <Compile Include="Infra\Persistence\FileRouteRepository.cs" />
+    <Compile Include="Aplication\Interface\IRotaRepository.cs" />
+    <Compile Include="Infra\Persistence\Repositories\FileRouteRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,7 +54,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Context\" />
+    <Folder Include="Domain\Interfaces\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

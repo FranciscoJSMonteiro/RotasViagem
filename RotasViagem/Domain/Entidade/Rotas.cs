@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace RotasViagem.Entidade
 {
-    public class Route
+    public class Rotas
     {
-        public string Origin { get; set; }
-        public string Destination { get; set; }
-        public int Cost { get; set; }
+        public string Origem { get; set; }
+        public string Destino { get; set; }
+        public int Custo { get; set; }
 
-        public Route(string origin, string destination, int cost)
+        public Rotas(string origem, string destino, int custo)
         {
-            Origin = origin;
-            Destination = destination;
-            Cost = cost;
+            Origem = origem;
+            Destino = destino;
+            Custo = custo;
         }
     }
 }
