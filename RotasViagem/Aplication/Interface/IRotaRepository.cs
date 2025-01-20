@@ -14,5 +14,6 @@ namespace RotasViagem.Aplication.Interfaces
         void SalvarRotas();
         void CargaInicial();
         void ConsultarRotasExistentes();
+        string EncontrarMelhorRota(string Porigem, string Pdestino);
     }
 }

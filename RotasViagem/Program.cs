@@ -24,6 +24,7 @@ namespace RotasViagem
 
             var repository = new FileRouteRepository();
             var service = new RotaService(repository);
+
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Bem-vindo ao sistema de rotas!");
